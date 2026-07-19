@@ -1,0 +1,22 @@
+Zenith Dental Template License Agreement
+Version 1.0 (Commercial Marketplace Release)
+
+Copyright (c) 2026 Zenith Dental. All Rights Reserved.
+
+Subject to the purchase terms of the marketplace (ThemeForest, TemplateMonster, Creative Market, Codester), the buyer is granted a non-exclusive, non-transferable, revocable license to use, customize, and modify this template for personal or commercial projects.
+
+TERMS OF USE:
+
+1. Permitted Uses:
+   - You may customize this template to build a single website for yourself or for a client.
+   - You may modify the code, layout, scripts, and stylesheets to suit your custom specifications.
+   - You may use the template as a boilerplate/theme for customized integration into a CMS (e.g. WordPress, Webflow, Shopify).
+
+2. Prohibited Uses:
+   - You may NOT resell, redistribute, sub-license, or share this template (either in its original state or modified form) on any marketplace, website, or shared server.
+   - You may NOT claim authorship or ownership of this template design and source scripts.
+   - You may NOT extract design assets, icons, or customized layout components to repackage them as part of another development kit or library.
+
+DISCLAIMER:
+
+THIS WEBSITE TEMPLATE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE TEMPLATE IS WITH YOU. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE TEMPLATE OR THE USE OR OTHER DEALINGS IN THE TEMPLATE.

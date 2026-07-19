@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentation and setup guide for the Zenith Dental Care HTML5 Website Template.">
+  <title>Documentation | Zenith Dental Website Template</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #0d9488;
+      --color-primary-dark: #0f766e;
+      --color-primary-light: #f0fdfa;
+      --color-text-main: #0f172a;
+      --color-text-muted: #475569;
+      --color-text-light: #64748b;
+      --color-border: #e2e8f0;
+      --color-bg-base: #f8fafc;
+      --color-bg-card: #ffffff;
+      
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --sidebar-width: 280px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-main);
+      background-color: var(--color-bg-base);
+      line-height: 1.7;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* --- Sidebar Layout --- */
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: #0f172a;
+      color: #94a3b8;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      border-right: 1px solid rgba(226, 232, 240, 0.1);
+      padding: 2rem 1.5rem;
+      z-index: 100;
+    }
+
+    .doc-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ffffff;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+    }
+
+    .doc-logo svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--color-primary);
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    .nav-group-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .nav-links {
+      list-style: none;
+    }
+
+    .nav-link a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link a:hover,
+    .nav-link.active a {
+      color: #ffffff;
+      background-color: rgba(13, 148, 136, 0.2);
+    }
+
+    /* --- Main Content --- */
+    .main-content {
+      margin-left: var(--sidebar-width);
+      padding: 3rem 4rem;
+      width: calc(100% - var(--sidebar-width));
+      max-width: 1000px;
+    }
+
+    header.doc-header {
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 2rem;
+    }
+
+    header.doc-header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    header.doc-header p {
+      color: var(--color-text-light);
+      font-size: 1.1rem;
+    }
+
+    .doc-section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .doc-section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-border);
+      color: var(--color-text-main);
+    }
+
+    .doc-section h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-primary-dark);
+    }
+
+    .doc-section p {
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* --- Code block styling --- */
+    pre {
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 1.25rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #1e293b;
+    }
+
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      background-color: #e2e8f0;
+      color: #0f766e;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    pre code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+      border-radius: 0;
+      font-size: inherit;
+    }
+
+    /* --- Lists & Tables --- */
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-muted);
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .folder-tree {
+      font-family: 'Consolas', 'Courier New', monospace;
+      color: var(--color-text-muted);
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .alert {
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-primary);
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .alert-warning {
+      border-color: #d97706;
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1.5rem;
+      }
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <a href="#" class="doc-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 2C6.5 2 2 6.5 2 12c0 2 .5 4 1.5 5.5.5-1 1.5-2 3.5-3 2.5-1.2 3.5-2.5 3.5-4.5V9c0-1.7 1.3-3 3-3s3 1.3 3 3v1c0 2 1 3.3 3.5 4.5 2 1 3 2 3.5 3 1-1.5 1.5-3.5 1.5-5.5 0-5.5-4.5-10-10-10z"/>
+      </svg>
+      <span>Zenith Dental</span>
+    </a>
+
+    <div class="nav-group-title">Getting Started</div>
+    <ul class="nav-links">
+      <li class="nav-link active"><a href="#intro">Introduction</a></li>
+      <li class="nav-link"><a href="#installation">Installation</a></li>
+      <li class="nav-link"><a href="#structure">File Structure</a></li>
+    </ul>
+
+    <div class="nav-group-title">Customization</div>
+    <ul class="nav-links">
+      <li class="nav-link"><a href="#styling">Design System (CSS)</a></li>
+      <li class="nav-link"><a href="#data">Services & Clinicians (JS)</a></li>
+      <li class="nav-link"><a href="#contact">Clinic Details</a></li>
+    </ul>
+
+    <div class="nav-group-title">Key Systems</div>
+    <ul class="nav-links">
+      <li class="nav-link"><a href="#wizard">Booking Wizard</a></li>
+      <li class="nav-link"><a href="#accessibility">Accessibility (WCAG)</a></li>
+      <li class="nav-link"><a href="#seo">SEO & Optimizations</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Panel -->
+  <main class="main-content">
+    <header class="doc-header">
+      <h1>Zenith Dental Template Documentation</h1>
+      <p>A comprehensive guide to customize, configure, and deploy the Zenith Dental template.</p>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section id="intro" class="doc-section">
+      <h2>Introduction</h2>
+      <p>
+        Welcome to the official developer documentation for the **Zenith Dental** website template. Zenith Dental is a premium commercial template built using standard, modular HTML5, CSS3 Custom Properties, and Vanilla ES6 JavaScript.
+      </p>
+      <p>
+        This template features a complete patient booking wizard, fully responsive layouts, optimized WebP images, local business SEO configurations, and WCAG AA accessibility standards, making it the perfect platform for medical and clinical practices.
+      </p>
+    </section>
+
+    <!-- Section 2: Installation -->
+    <section id="installation" class="doc-section">
+      <h2>Installation & Setup</h2>
+      <p>Since Zenith Dental is a static HTML5/CSS3 template, setting it up is simple. No compilers or server-side installs are strictly required to preview the site.</p>
+      
+      <h3>1. Local Preview</h3>
+      <p>Simply navigate to the <code>Template/</code> folder and open <code>index.html</code> in any web browser to view the page instantly.</p>
+      
+      <h3>2. Web Server Deployment</h3>
+      <p>To run the live booking scheduler and have all modules function optimally, upload the contents of the <code>Template/</code> folder directly to your web server (e.g. Apache, Nginx, cPanel hosting, or static providers like Netlify, Vercel, or GitHub Pages).</p>
+      
+      <div class="alert">
+        <strong>Tip:</strong> If you are planning major CSS additions, editing variables directly in <code>Template/assets/css/styles.css</code> will update components globally without code duplication.
+      </div>
+    </section>
+
+    <!-- Section 3: File Structure -->
+    <section id="structure" class="doc-section">
+      <h2>File Structure</h2>
+      <p>Here is an overview of the directories and files within the Zenith Dental template package:</p>
+      
+      <div class="folder-tree">
+        Template/<br>
+        ├── index.html&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Main landing page HTML<br>
+        ├── robots.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Search engine rules<br>
+        ├── sitemap.xml&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Sitemap for search crawlers<br>
+        └── assets/<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── css/<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── styles.css&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Colors, fonts, variables & resets<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── components.css&nbsp;# Header, hero, wizard, cards, footer<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── js/<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── data.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Services data, testimonials & FAQ entries<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── booking.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Stepper navigation & calendar slot logic<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── main.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Mobile drawer, modal popups & carousel controls<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── images/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Compressed clinician and treatment graphics (WebP)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;└── favicons/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Cross-platform favicons and manifest file
+      </div>
+    </section>
+
+    <!-- Section 4: Design System -->
+    <section id="styling" class="doc-section">
+      <h2>Design System & CSS Styling</h2>
+      <p>The layout uses CSS custom variables (variables declared in the <code>:root</code> selector of <code>styles.css</code>) to maintain global styling consistency. You can change colors and fonts by updating these variables:</p>
+      
+      <pre><code>:root {
+  /* Core Clinical Palette */
+  --color-primary: #0d9488;          /* Calm clinical teal */
+  --color-primary-dark: #0f766e;     /* Hover state color */
+  --color-secondary: #0284c7;        /* Medical accent blue */
+  --color-accent: #d97706;           /* Amber/Gold rating star color */
+  
+  /* Typography setup */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}</code></pre>
+      <p>All button styles, cards, and section background colors read directly from these design system variables.</p>
+    </section>
+
+    <!-- Section 5: Services & Doctors Data configuration -->
+    <section id="data" class="doc-section">
+      <h2>Services & Doctors Data (JS)</h2>
+      <p>Instead of hardcoding doctor cards, reviews, or services in HTML, these arrays are configured inside <code>Template/assets/js/data.js</code> and generated dynamically. To edit them, modify the data array objects:</p>
+      
+      <pre><code>const dentalServices = [
+  {
+    id: "general",
+    title: "General Dentistry",
+    shortDescription: "Preventative dental care for families...",
+    price: "From $90",
+    duration: "45-60 mins",
+    treatments: [
+      "Routine Cleanings & Screenings",
+      "Composite Fillings"
+    ]
+  }
+];</code></pre>
+      <p>The Booking calendar automatically checks which week-days each clinician is scheduled to work by checking their active schedule arrays in <code>data.js</code>.</p>
+    </section>
+
+    <!-- Section 6: Contact Details Markup -->
+    <section id="contact" class="doc-section">
+      <h2>Clinic Contact Information</h2>
+      <p>Static business contact information (Opening hours, telephone numbers, coordinates, address text) is defined in <code>Template/index.html</code>. We have wrapped these details in comments so you can easily identify them:</p>
+      <pre><code>&lt;!-- EDITABLE: Address and Phone inside footer --&gt;
+&lt;li class="footer-contact-item"&gt;
+  &lt;span class="footer-contact-text"&gt;
+    100 Medical Center Plaza, Chicago, IL 60611
+  &lt;/span&gt;
+&lt;/li&gt;</code></pre>
+    </section>
+
+    <!-- Section 7: Booking Wizard -->
+    <section id="wizard" class="doc-section">
+      <h2>Interactive Booking Wizard</h2>
+      <p>The Live Appointment Booking Wizard is driven by <code>Template/assets/js/booking.js</code>. The wizard operates in three key steps:</p>
+      <ol>
+        <li><strong>Select Care:</strong> User picks a service card and a practitioner card. The scripts detect validation conditions before allowing navigation to step 2.</li>
+        <li><strong>Choose Date & Time:</strong> Renders a dynamic calendar showing the next 14 open days, filtering out days the chosen doctor does not work. Clicking a day queries available hourly slots.</li>
+        <li><strong>Patient Info:</strong> Standard contact details form. Submitting will trigger a client-side mock loader overlay and output a complete transaction summary card displaying unique confirmation reference codes.</li>
+      </ol>
+      <div class="alert alert-warning">
+        <strong>Customizing form handler:</strong> To connect the final booking output with an email engine (e.g. PHP mailer) or an API, customize the <code>submitAppointment()</code> function inside <code>Template/assets/js/booking.js</code>.
+      </div>
+    </section>
+
+    <!-- Section 8: Accessibility -->
+    <section id="accessibility" class="doc-section">
+      <h2>Accessibility (WCAG AA Compliance)</h2>
+      <p>Zenith Dental strictly implements WCAG AA criteria to provide complete support for screen readers and keyboard navigation:</p>
+      <ul>
+        <li><strong>Focus Trapping:</strong> When the details modal is active, focus navigation is trapped inside the popup container, and focus is restored to the initiating button on closing.</li>
+        <li><strong>Dynamic ARIA:</strong> Calendar day cells compute and set detailed descriptive titles (e.g. <code>aria-label="Wednesday, July 15, 2026"</code>) so assistive screen readers read complete context instead of simple integers.</li>
+        <li><strong>Contrast Ratios:</strong> Colors like <code>--color-text-light</code> are set to Slate 500 (<code>#64748b</code>) to guarantee contrast scores over 4.5:1 on white backdrops.</li>
+      </ul>
+    </section>
+
+    <!-- Section 9: SEO & Performance -->
+    <section id="seo" class="doc-section">
+      <h2>SEO & Performance Optimizations</h2>
+      <ul>
+        <li><strong>JSON-LD Structured Data:</strong> Configured detailed <code>Dentist</code> structured metadata in the head of <code>index.html</code> to allow search engine crawlers to parse address, hours, geo-coordinates, and social links instantly.</li>
+        <li><strong>WebP Format:</strong> All clinician profiles and clinic images have been converted to high-performance WebP formats, decreasing asset payloads by roughly 80% to ensure Lighthouse load speeds over 95%.</li>
+        <li><strong>Lazy Loading:</strong> All card graphics below the fold are loaded asynchronously using <code>loading="lazy"</code> tags.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <script>
+    // Smooth scroll navigation highlight logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('.nav-link');
+      
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
